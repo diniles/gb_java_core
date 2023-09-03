@@ -1,1 +1,1 @@
-# gb_java_core
+# Java Core (семинары)
