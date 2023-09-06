@@ -18,9 +18,14 @@ public class Main {
     private static int fieldSizeY;
 
     public static void main(String[] args) {
-        field = new char[3][];
+
+
         while (true) {
-            initialize();
+            System.out.println("Введите размер игрового поля: ");
+            fieldSizeX = scanner.nextInt();
+            scanner.nextLine();
+            fieldSizeY = fieldSizeX;
+            field = initialize(fieldSizeX);
             printField();
             while (true) {
                 humanTurn();
@@ -41,15 +46,26 @@ public class Main {
         }
     }
 
-    private static void initialize() {
-        fieldSizeX = 3;
-        fieldSizeY = 3;
+    //    private static void initialize() {
+//        fieldSizeX = 3;
+//        fieldSizeY = 3;
+//        field = new char[fieldSizeX][fieldSizeY];
+//        for (int x = 0; x < fieldSizeX; x++) {
+//            for (int y = 0; y < fieldSizeY; y++) {
+//                field[x][y] = DOT_EMPTY;
+//            }
+//        }
+//    }
+    private static char[][] initialize(int size) {
+        fieldSizeX = size;
+        fieldSizeY = size;
         field = new char[fieldSizeX][fieldSizeY];
         for (int x = 0; x < fieldSizeX; x++) {
             for (int y = 0; y < fieldSizeY; y++) {
                 field[x][y] = DOT_EMPTY;
             }
         }
+        return field;
     }
 
     private static void printField() {
