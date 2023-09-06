@@ -1,5 +1,8 @@
 package seminar1;
 
+import seminar1.lib.Formatter;
+import seminar1.lib.Matrix;
+
 /**
  * Main class
  */

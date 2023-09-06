@@ -1,4 +1,4 @@
-package seminar1;
+package seminar1.lib;
 
 /**
  * Class for generate matrix according given size

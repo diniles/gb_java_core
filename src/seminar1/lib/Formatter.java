@@ -1,4 +1,4 @@
-package seminar1;
+package seminar1.lib;
 
 /**
  * Class for formatted print given matrix
