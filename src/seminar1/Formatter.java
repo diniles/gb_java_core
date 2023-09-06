@@ -1,5 +1,8 @@
 package seminar1;
 
+/**
+ * Class for formatted print given matrix
+ */
 public class Formatter {
     public static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
