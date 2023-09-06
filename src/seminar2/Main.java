@@ -18,7 +18,7 @@ public class Main {
     private static int fieldSizeY;
 
     public static void main(String[] args) {
-        field = new char[3][3];
+        field = new char[3][];
         while (true) {
             initialize();
             printField();
@@ -55,14 +55,14 @@ public class Main {
     private static void printField() {
         System.out.print("+");
         for (int x = 0; x < fieldSizeX * 2 + 1; x++) {
-            System.out.println((x % 2 == 0) ? "-" : x / 2 + 1);
+            System.out.print((x % 2 == 0) ? "-" : x / 2 + 1);
         }
         System.out.println();
 
         for (int x = 0; x < fieldSizeX; x++) {
             System.out.print(x + 1 + "|");
             for (int y = 0; y < fieldSizeY; y++) {
-                System.out.println(field[x][y] + "|");
+                System.out.print(field[x][y] + "|");
             }
             System.out.println();
         }
@@ -98,7 +98,7 @@ public class Main {
                     scanner.nextLine();
                 }
             }
-        } while (!isCellValid(x, y) || isCellEmpty(x, y));
+        } while (!isCellValid(x, y) || !isCellEmpty(x, y));
         field[x][y] = DOT_HUMAN;
     }
 
@@ -120,7 +120,7 @@ public class Main {
     }
 
     private static boolean checkGameState(char c, String s) {
-        if (checkWin(c)) {
+        if (checkWinV2(c)) {
             System.out.println(s);
             return true;
         }
@@ -162,14 +162,59 @@ public class Main {
     }
 
     private static boolean checkWinV2(char c) {
+        return checkHorizontal(c) || checkVertical(c) || checkDiagonalMain(c) || checkDiagonalSide(c);
+    }
 
-
+    private static boolean checkHorizontal(char c) {
+        boolean result = false;
         for (int x = 0; x < fieldSizeX; x++) {
+            result = true;
             for (int y = 0; y < fieldSizeY; y++) {
+                if (field[x][y] != c) {
+                    result = false;
+                }
+            }
+            if (result) break;
+        }
+        return result;
+    }
 
+    private static boolean checkVertical(char c) {
+        boolean result = false;
+        for (int y = 0; y < fieldSizeY; y++) {
+            result = true;
+            for (int x = 0; x < fieldSizeX; x++) {
+                if (field[x][y] != c) {
+                    result = false;
+                }
+            }
+            if (result) break;
+        }
+        return result;
+    }
+
+    private static boolean checkDiagonalMain(char c) {
+        boolean result = false;
+        for (int x = 0; x < fieldSizeX; x++) {
+            result = true;
+            if (field[x][x] != c) {
+                result = false;
+                break;
             }
         }
-
-        return false;
+        return result;
     }
+
+    private static boolean checkDiagonalSide(char c) {
+        boolean result = false;
+        for (int x = fieldSizeX - 1, y = 0; x >= 0; x--, y++) {
+            result = true;
+            if (field[x][y] != c) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
 }
