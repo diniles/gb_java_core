@@ -1,20 +1,12 @@
 package ru.gb.jcore.seminar3;
 
 public abstract class Employee implements Comparable<Employee> {
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public abstract double getSalary();

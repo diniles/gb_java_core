@@ -22,7 +22,7 @@ public class EmployeeList implements Iterable<Employee> {
     @Override
     public Iterator<Employee> iterator() {
         int[] index = {0};
-        return new Iterator<Employee>() {
+        return new Iterator<>() {
             @Override
             public boolean hasNext() {
                 return index[0] < employees.size();
