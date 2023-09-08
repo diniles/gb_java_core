@@ -39,7 +39,7 @@ public class EmployeeList implements Iterable<Employee> {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Employee e : employees) {
-            stringBuilder.append(employees).append("\n");
+            stringBuilder.append(e).append("\n");
         }
         return stringBuilder.toString();
     }
