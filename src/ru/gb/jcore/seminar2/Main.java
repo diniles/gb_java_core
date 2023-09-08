@@ -1,4 +1,4 @@
-package seminar2;
+package ru.gb.jcore.seminar2;
 
 import java.util.Random;
 import java.util.Scanner;
