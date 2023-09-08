@@ -1,6 +1,6 @@
 package ru.gb.jcore.seminar3;
 
-public abstract class Employee {
+public abstract class Employee implements Comparable<Employee> {
     private String firstName;
     private String lastName;
 
@@ -24,4 +24,12 @@ public abstract class Employee {
         return firstName + " " + lastName;
     }
 
+    @Override
+    public int compareTo(Employee o) {
+        int result = this.lastName.compareTo(o.lastName);
+        if (result == 0) {
+            result = this.firstName.compareTo(o.firstName);
+        }
+        return result;
+    }
 }
