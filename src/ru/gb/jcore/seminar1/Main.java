@@ -1,7 +1,7 @@
-package seminar1;
+package ru.gb.jcore.seminar1;
 
-import seminar1.lib.Formatter;
-import seminar1.lib.Matrix;
+import ru.gb.jcore.seminar1.lib.Formatter;
+import ru.gb.jcore.seminar1.lib.Matrix;
 
 /**
  * Main class
