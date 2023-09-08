@@ -17,7 +17,7 @@ public abstract class Employee {
         return lastName;
     }
 
-    public abstract double salary();
+    public abstract double getSalary();
 
     @Override
     public String toString() {
