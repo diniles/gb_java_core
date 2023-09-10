@@ -1,7 +1,7 @@
 package ru.gb.jcore.seminar3;
 
 public class MyArrayDataException extends RuntimeException {
-    MyArrayDataException(String message) {
-        super("Found not a number " + message);
+    public MyArrayDataException(int i, int j) {
+        super(String.format("Found not a number on address %d %d", i, j));
     }
 }
