@@ -1,7 +1,7 @@
 package ru.gb.jcore.seminar4;
 
-public static class MyArraySizeException extends Exception {
-    MyArraySizeException(int expectedSize, int rows, int cols) {
-        super(String.format("Expected %d ", expectedSize));
+public class MyArraySizeException extends RuntimeException {
+    MyArraySizeException(int expectedSize, int size, String message) {
+        super(String.format("Expected %d %s", expectedSize, message));
     }
 }
