@@ -1,7 +1,5 @@
 package ru.gb.jcore.seminar4;
 
-import ru.gb.jcore.seminar3.MyArrayDataException;
-
 public class Main {
     private static final int MATRIX_SIZE = 4;
 

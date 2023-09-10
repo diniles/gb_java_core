@@ -1,4 +1,4 @@
-package ru.gb.jcore.seminar3;
+package ru.gb.jcore.seminar4;
 
 public class MyArrayDataException extends RuntimeException {
     public MyArrayDataException(int i, int j) {
