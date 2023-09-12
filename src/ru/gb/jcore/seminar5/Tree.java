@@ -3,14 +3,21 @@ package ru.gb.jcore.seminar5;
 import java.io.File;
 
 public class Tree {
+
+    public static void main(String[] args) {
+
+        print(new File("."), "", true);
+
+    }
+
     public static void print(File file, String indent, boolean isLast) {
-        System.out.println(indent);
+        System.out.print(indent);
         if (isLast) {
-            System.out.println("└─");
+            System.out.print("└─");
             indent += "  ";
         } else {
-            System.out.println("├─");
-            indent += "  ";
+            System.out.print("├─");
+            indent += "│ ";
         }
         System.out.println(file.getName());
 
