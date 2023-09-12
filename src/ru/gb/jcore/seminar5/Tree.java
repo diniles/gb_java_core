@@ -4,12 +4,6 @@ import java.io.File;
 
 public class Tree {
 
-    public static void main(String[] args) {
-
-        print(new File("."), "", true);
-
-    }
-
     public static void print(File file, String indent, boolean isLast) {
         System.out.print(indent);
         if (isLast) {
@@ -38,6 +32,8 @@ public class Tree {
             if (files[i].isDirectory()) {
                 subDirCounter++;
                 print(files[i], indent, subDirCounter == subDirTotal);
+            } else {
+                print(files[i], indent, false);
             }
         }
     }
