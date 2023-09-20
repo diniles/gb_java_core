@@ -1,7 +1,9 @@
 package ru.gb.jcore.seminar5;
 
-
 import java.io.IOException;
+import java.io.File;
+
+import static ru.gb.jcore.seminar5.Tree.print;
 
 public class Main {
 
@@ -13,7 +15,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        //        print(new File("."), " ", true);
+        print(new File("."), " ", true);
 
     }
 }
