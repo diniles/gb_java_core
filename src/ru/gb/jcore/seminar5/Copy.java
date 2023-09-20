@@ -34,9 +34,9 @@ public class Copy {
                     }
                     copyFolder(src + File.separator + file, dst + File.separator + file);
                 }
-            } else {
-                copyFile(fldSrc, fldDst);
             }
+        } else {
+            copyFile(fldSrc, fldDst);
         }
     }
 }
