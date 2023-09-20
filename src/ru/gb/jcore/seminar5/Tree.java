@@ -21,9 +21,12 @@ public class Tree {
         }
 
         int subDirTotal = 0;
+        int filesTotal = 0;
         for (int i = 0; i < files.length; i++) {
             if (files[i].isDirectory()) {
                 subDirTotal++;
+            } else {
+                filesTotal++;
             }
         }
 
@@ -32,8 +35,20 @@ public class Tree {
             if (files[i].isDirectory()) {
                 subDirCounter++;
                 print(files[i], indent, subDirCounter == subDirTotal);
-            } else {
-                print(files[i], indent, false);
+            }
+        }
+
+        int fileCounter = 0;
+        for (int i = 0; i < files.length; i++) {
+            if (!files[i].isDirectory()) {
+                fileCounter++;
+                System.out.print(indent);
+                if (fileCounter < filesTotal) {
+                    System.out.print(" ├─");
+                } else {
+                    System.out.print(" └─");
+                }
+                System.out.println(files[i].getName());
             }
         }
     }
